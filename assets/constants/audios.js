@@ -100,6 +100,40 @@ import number_98 from '../audio/en_num98.mp3';
 import number_99 from '../audio/en_num99.mp3';
 import number_100 from '../audio/en_num100.mp3';
 
+//alphabet audio
+import alphabet_1 from '../audio/en1.mp3';
+import alphabet_2 from '../audio/en2.mp3';
+import alphabet_3 from '../audio/en3.mp3';
+import alphabet_4 from '../audio/en4.mp3';
+import alphabet_5 from '../audio/en5.mp3';
+import alphabet_6 from '../audio/en6.mp3';
+import alphabet_7 from '../audio/en7.mp3';
+import alphabet_8 from '../audio/en8.mp3';
+import alphabet_9 from '../audio/en9.mp3';
+import alphabet_10 from '../audio/en10.mp3';
+import alphabet_11 from '../audio/en11.mp3';
+import alphabet_12 from '../audio/en12.mp3';
+import alphabet_13 from '../audio/en13.mp3';
+import alphabet_14 from '../audio/en14.mp3';
+import alphabet_15 from '../audio/en15.mp3';
+import alphabet_16 from '../audio/en16.mp3';
+import alphabet_17 from '../audio/en17.mp3';
+import alphabet_18 from '../audio/en18.mp3';
+import alphabet_19 from '../audio/en19.mp3';
+import alphabet_20 from '../audio/en20.mp3';
+import alphabet_21 from '../audio/en21.mp3';
+import alphabet_22 from '../audio/en22.mp3';
+import alphabet_23 from '../audio/en23.mp3';
+import alphabet_24 from '../audio/en24.mp3';
+import alphabet_25 from '../audio/en25.mp3';
+import alphabet_26 from '../audio/en26.mp3';
+
+const alphabetaudios = [
+  alphabet_1, alphabet_2, alphabet_3, alphabet_4, alphabet_5, alphabet_6, alphabet_7, alphabet_8, alphabet_9, alphabet_10,
+  alphabet_11, alphabet_12, alphabet_13, alphabet_14, alphabet_15, alphabet_16, alphabet_17, alphabet_18, alphabet_19, alphabet_20,
+  alphabet_21, alphabet_22, alphabet_23, alphabet_24, alphabet_25, alphabet_26
+];
+
 const numberaudios = [
     number_0, number_1, number_2, number_3, number_4, number_5, 
     number_6, number_7, number_8, number_9,number_10, number_11,
@@ -121,5 +155,6 @@ const numberaudios = [
 ];
 
 export {
-    numberaudios
+    numberaudios,
+    alphabetaudios
 }

@@ -1,8 +1,10 @@
-import home_abc from '../abc.png'
-import home_numbers from '../numbers.png'
-import home_shapes from '../shapes.png'
-import home_puzzle from '../puzzle.png'
-import home_family from '../family.png'
+import home_abc from '../image/abc.png'
+import home_abc_small from '../image/abc_small.png'
+import home_numbers from '../image/numbers.png'
+import home_shapes from '../image/shapes.png'
+import home_puzzle from '../image/puzzle.png'
+import home_family from '../image/family.png'
+import home_word from '../image/words.png'
 
 //number images
 import number_0 from '../image/number_0.png';
@@ -106,7 +108,7 @@ import father from '../image/family_tree_dad.png';
 import mother from '../image/family_tree_mom.png';
 import brother from '../image/family_tree_brother.png';
 import sister from '../image/family_tree_sister.png';
-import me from '../male_baby.png';
+import me from '../image/male_baby.png';
 import uncle from '../image/family_tree_uncle.png';
 import aunt from '../image/family_tree_aunt.png';
 import cousin_male from '../image/family_tree_cousin_male.png';
@@ -151,10 +153,12 @@ const family_images = {
 
 export {
     home_abc,
+    home_abc_small,
     home_numbers,
     home_shapes,
     home_puzzle,
     home_family,
+    home_word,
     numberimages,
     en_word_images,
     capital_images,

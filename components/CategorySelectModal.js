@@ -2,8 +2,10 @@ import { View, Text, Modal, Alert, TouchableOpacity, Image} from 'react-native'
 import React from 'react'
 import { selection } from '../assets/constants/pageui';
 import Entypo from '@expo/vector-icons/Entypo';
+import { useRouter } from 'expo-router';
 
 export default function CategorySelectModal({ data,visible, setVisible }) {
+    const router = useRouter()
     return (
         <Modal
             visible={visible}
@@ -24,12 +26,16 @@ export default function CategorySelectModal({ data,visible, setVisible }) {
                         Select
                     </Text>
                     <View
-                        className='w-full flex-row'
+                        className='w-full flex-row flex-wrap'
                     >
                         {
                             data.map(item =>
                                 <TouchableOpacity
                                     key={item.id}
+                                    onPress={()=>{
+                                        router.push(item.path)
+                                        setVisible(false)
+                                    }}
                                     className='w-1/2 p-2'
                                 >
                                     <View
@@ -39,7 +45,7 @@ export default function CategorySelectModal({ data,visible, setVisible }) {
                                         }}
                                     >
                                         <Image
-                                            source={require('../assets/abc.png')}
+                                            source={item.image}
                                             className='w-20 h-20'
                                         />
                                         <Text
@@ -48,7 +54,7 @@ export default function CategorySelectModal({ data,visible, setVisible }) {
                                                 color: item.textColor
                                             }}
                                         >
-                                            Capital Letter
+                                            {item.title}
                                         </Text>
                                     </View>
                                 </TouchableOpacity>

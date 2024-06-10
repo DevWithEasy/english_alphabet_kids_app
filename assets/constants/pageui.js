@@ -1,5 +1,6 @@
-import { numberaudios } from "./audios"
-import { family_images, home_abc, home_family, home_numbers, home_puzzle, home_shapes, numberimages } from "./images"
+import { alphabetaudios, numberaudios } from "./audios"
+import { backgroundColor, textColor } from "./colors"
+import { capital_images, en_word_images, family_images, home_abc, home_abc_small, home_family, home_numbers, home_puzzle, home_shapes, home_word, numberimages, small_images } from "./images"
 
 const homedata = [
     {
@@ -8,7 +9,8 @@ const homedata = [
         subTitle: 'Capital and Small',
         image: home_abc,
         backgroundColor: '#dcfce7',
-        textColor: '#16a34a'
+        textColor: '#16a34a',
+        path : '/letters'
     },
     {
         id: 2,
@@ -16,7 +18,8 @@ const homedata = [
         subTitle: 'Numeric Numbers',
         image: home_numbers,
         backgroundColor: '#fee2e2',
-        textColor: '#dc2626'
+        textColor: '#dc2626',
+        path : '/numbers'
     },
     {
         id: 3,
@@ -24,7 +27,8 @@ const homedata = [
         subTitle: 'Geometric shapes',
         image: home_shapes,
         backgroundColor: '#fef9c3',
-        textColor: '#ca8a04'
+        textColor: '#ca8a04',
+        path : '/shapes'
     },
     {
         id: 4,
@@ -32,7 +36,8 @@ const homedata = [
         subTitle: 'Family member introduction',
         image: home_family,
         backgroundColor: '#ecfccb',
-        textColor: '#65a30d'
+        textColor: '#65a30d',
+        path : '/family'
     },
     {
         id: 5,
@@ -40,7 +45,8 @@ const homedata = [
         subTitle: 'Practice Learning',
         image: home_puzzle,
         backgroundColor: '#e0e7ff',
-        textColor: '#4f46e5'
+        textColor: '#4f46e5',
+        path : '/games'
     },
 ]
 
@@ -52,15 +58,41 @@ const selection = {
             image: home_abc,
             backgroundColor: '#dcfce7',
             textColor: '#16a34a',
-            path: ''
+            path: '/alphabet?q=capital'
         },
         {
             id: 2,
             title: 'Small Letter',
-            image: home_abc,
+            image: home_abc_small,
             backgroundColor: '#fee2e2',
             textColor: '#dc2626',
-            path: ''
+            path: '/alphabet?q=small'
+        },
+        {
+            id: 3,
+            title: 'Alphabet Word',
+            image: home_word,
+            backgroundColor: '#fef9c3',
+            textColor: '#ca8a04',
+            path: '/alphabet/word'
+        }
+    ],
+    Numbers: [
+        {
+            id: 1,
+            title: '(0-9) Learn',
+            image: home_numbers,
+            backgroundColor: '#dcfce7',
+            textColor: '#16a34a',
+            path: '/numbers?q=0_9'
+        },
+        {
+            id: 2,
+            title: '(1-100) Learn',
+            image: home_numbers,
+            backgroundColor: '#fee2e2',
+            textColor: '#dc2626',
+            path: '/numbers?q=1_100'
         }
     ]
 }
@@ -89,7 +121,9 @@ const number_0_to_100 = [
     id: index + 1,
     number: index,
     title: title,
-    audio: numberaudios[index]
+    audio: numberaudios[index],
+    backgroundColor : backgroundColor[index],
+    textColor : textColor[index]
 }))
 
 const familyTree = [
@@ -151,7 +185,43 @@ const familyTree = [
     }
 ];
 
-
+const alphabets = [
+    { capital: 'A', small: 'a', word: 'Ant' },
+    { capital: 'B', small: 'b', word: 'Bus' },
+    { capital: 'C', small: 'c', word: 'Cat' },
+    { capital: 'D', small: 'd', word: 'Dog' },
+    { capital: 'E', small: 'e', word: 'Elephant' },
+    { capital: 'F', small: 'f', word: 'Frog' },
+    { capital: 'G', small: 'g', word: 'Gun' },
+    { capital: 'H', small: 'h', word: 'Hen' },
+    { capital: 'I', small: 'i', word: 'Ice-cream' },
+    { capital: 'J', small: 'j', word: 'Jelly' },
+    { capital: 'K', small: 'k', word: 'Key' },
+    { capital: 'L', small: 'l', word: 'Lion' },
+    { capital: 'M', small: 'm', word: 'Mango' },
+    { capital: 'N', small: 'n', word: 'Net' },
+    { capital: 'O', small: 'o', word: 'Ox' },
+    { capital: 'P', small: 'p', word: 'Pen' },
+    { capital: 'Q', small: 'q', word: 'Queen' },
+    { capital: 'R', small: 'r', word: 'Rabbit' },
+    { capital: 'S', small: 's', word: 'Sun' },
+    { capital: 'T', small: 't', word: 'Tiger' },
+    { capital: 'U', small: 'u', word: 'Umbrella' },
+    { capital: 'V', small: 'v', word: 'Violin' },
+    { capital: 'W', small: 'w', word: 'Watch' },
+    { capital: 'X', small: 'x', word: 'Xylophon' },
+    { capital: 'Y', small: 'y', word: 'Yalk' },
+    { capital: 'Z', small: 'z', word: 'Zabra' }
+].map((alphabet,index)=>({
+    id : index + 1,
+    ...alphabet,
+    audio : alphabetaudios[index],
+    word_image : en_word_images[index],
+    capital_image : capital_images[index],
+    small_image : small_images[index],
+    backgroundColor : backgroundColor[index],
+    textColor : textColor[index]
+}))
 
 
 export {
@@ -159,5 +229,6 @@ export {
     selection,
     numberdata,
     number_0_to_100,
-    familyTree
+    familyTree,
+    alphabets
 }

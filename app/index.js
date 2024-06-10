@@ -8,23 +8,21 @@ import CategorySelectModal from '../components/CategorySelectModal';
 
 export default function Page() {
   const [visible,setVisible] = useState(false)
+  const [data,setData] = useState([])
   const router = useRouter()
   const handleRoute=(item)=>{
-    if (item.title === 'Numbers'){
-      router.push('/numbers')
-    }else if(item.title === 'Family Tree'){
-      router.push('/family')
-    }
-    else{
+    if (item.path === '/shapes' || item.path === '/games' || item.path === '/family'){
+      router.push(item.path)
+    }else{
       setVisible(!visible)
-      console.log('click')
+      setData(selection[item.title])
     }
   }
   return (
     <ScrollView
       className='bg-white'
       style={{
-        paddingTop: Platform.OS === 'ios' ? 0 : 24
+        paddingTop: Platform.OS === 'ios' ? 0 : Constants.default.statusBarHeight
       }}
     >
       <View
@@ -34,7 +32,7 @@ export default function Page() {
         }}
       >
         <Image
-          source={require('../assets/female_baby.png')}
+          source={require('../assets/image/female_baby.png')}
           className='w-24 h-24'
         />
       </View>
@@ -101,7 +99,7 @@ export default function Page() {
         visible && <CategorySelectModal
           visible={visible}
           setVisible={setVisible}
-          data={selection['Letters']}
+          data={data}
         />
       }
     </ScrollView>

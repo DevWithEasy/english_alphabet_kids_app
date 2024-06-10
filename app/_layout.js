@@ -11,7 +11,13 @@ export default function RootLayout() {
                 }}
             />
             <Stack.Screen
-                name='numbers'
+                name='alphabet/[id]'
+                options={{
+                    headerShown: false
+                }}
+            />
+            <Stack.Screen
+                name='numbers/index'
                 options={{
                     title: 'Numbers'
                 }}
