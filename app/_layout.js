@@ -31,7 +31,7 @@ export default function RootLayout() {
             <Stack.Screen
                 name='family'
                 options={{
-                    title: 'Family Indroduction'
+                    title: 'Family Indroduction',
                 }}
             />
             <Stack.Screen
