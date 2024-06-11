@@ -11,6 +11,12 @@ export default function RootLayout() {
                 }}
             />
             <Stack.Screen
+                name='alphabet/word'
+                options={{
+                    title: 'Alphabet Word'
+                }}
+            />
+            <Stack.Screen
                 name='alphabet/[id]'
                 options={{
                     headerShown: false
@@ -26,6 +32,12 @@ export default function RootLayout() {
                 name='family'
                 options={{
                     title: 'Family Indroduction'
+                }}
+            />
+            <Stack.Screen
+                name='shapes'
+                options={{
+                    title: 'Shape Indroduction'
                 }}
             />
         </Stack>

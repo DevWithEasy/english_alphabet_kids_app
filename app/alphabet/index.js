@@ -1,4 +1,4 @@
-import { View, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, ScrollView, TouchableOpacity, Image, ImageBackground } from 'react-native'
 import { useGlobalSearchParams, useNavigation } from 'expo-router'
 import playSound from '../../utils/playAudio'
 import { alphabets } from '../../assets/constants/pageui'
@@ -13,7 +13,11 @@ export default function Alphabet() {
     });
   }, [navigation]);
   return (
-    <ScrollView>
+    <ImageBackground
+      source={require('../../assets/image/gradient_background.jpg')}
+      blurRadius={10}
+    >
+      <ScrollView>
       <View
         className='flex-row flex-wrap'
       >
@@ -27,7 +31,7 @@ export default function Alphabet() {
               className='w-4/12 p-2'
             >
               <View
-                className='py-5 justify-center items-center space-y-5 bg-white rounded-xl shadow'
+                className='py-7 justify-center items-center space-y-5 bg-white/70 rounded-xl shadow'
               >
                 <Image
                   source={q === 'capital' ? item.capital_image : item.small_image}
@@ -40,5 +44,7 @@ export default function Alphabet() {
       </View>
 
     </ScrollView>
+    </ImageBackground>
+    
   )
 }

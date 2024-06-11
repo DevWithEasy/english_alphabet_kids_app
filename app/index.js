@@ -1,4 +1,4 @@
-import * as Constants from 'expo-constants';
+import Constants from 'expo-constants';
 import { Link, useRouter } from "expo-router";
 import { Image, Platform, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { homedata, selection } from "../assets/constants/pageui";
@@ -22,7 +22,7 @@ export default function Page() {
     <ScrollView
       className='bg-white'
       style={{
-        paddingTop: Platform.OS === 'ios' ? 0 : Constants.default.statusBarHeight
+        paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
       }}
     >
       <View
@@ -51,7 +51,7 @@ export default function Page() {
         </Text>
       </View>
       <View
-        className='flex-row flex-wrap'
+        className='flex-row flex-wrap pb-8'
       >
         {
           homedata.map((item, index) => {

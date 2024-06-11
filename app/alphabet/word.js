@@ -1,21 +1,29 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, Image, ImageBackground } from 'react-native'
 import React from 'react'
 import { alphabets } from '../../assets/constants/pageui'
 import { useRouter } from 'expo-router'
+import playSound from '../../utils/playAudio'
 
 export default function Words() {
   const router = useRouter()
   return (
+    <ImageBackground
+    source={require('../../assets/image/gradient_background.jpg')}
+    blurRadius={20}
+  >
     <ScrollView>
       <View
-        className=''
+        className='space-y-2 p-2'
       >
         {
           alphabets.map(item => (
             <TouchableOpacity
               key={item.id}
-              onPress={()=>router.push(`/alphabet/${item.id}`)}
-              className='p-2 bg-stone-50 border-b border-blue-600'
+              onPress={()=>{
+                router.push(`/alphabet/${item.id}`)
+                playSound(item.audio)
+              }}
+              className='p-2 bg-white/50 rounded-xl'
             >
               <View
                 className='flex-row items-center space-x-6'
@@ -48,5 +56,7 @@ export default function Words() {
         }
       </View>
     </ScrollView>
+    </ImageBackground>
+    
   )
 }

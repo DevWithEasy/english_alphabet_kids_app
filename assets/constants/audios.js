@@ -128,6 +128,18 @@ import alphabet_24 from '../audio/en24.mp3';
 import alphabet_25 from '../audio/en25.mp3';
 import alphabet_26 from '../audio/en26.mp3';
 
+//family
+import family_1 from '../audio/family_1.mp3';
+import family_2 from '../audio/family_2.mp3';
+import family_3 from '../audio/family_3.mp3';
+import family_4 from '../audio/family_4.mp3';
+import family_5 from '../audio/family_5.mp3';
+import family_6 from '../audio/family_6.mp3';
+import family_7 from '../audio/family_7.mp3';
+import family_8 from '../audio/family_8.mp3';
+import family_9 from '../audio/family_9.mp3';
+import family_10 from '../audio/family_10.mp3';
+
 const alphabetaudios = [
   alphabet_1, alphabet_2, alphabet_3, alphabet_4, alphabet_5, alphabet_6, alphabet_7, alphabet_8, alphabet_9, alphabet_10,
   alphabet_11, alphabet_12, alphabet_13, alphabet_14, alphabet_15, alphabet_16, alphabet_17, alphabet_18, alphabet_19, alphabet_20,
@@ -154,7 +166,12 @@ const numberaudios = [
     number_96, number_97, number_98, number_99,number_100
 ];
 
+const familyaudios = [
+  family_1, family_2, family_3, family_4, family_5, family_6, family_7, family_8, family_9, family_10
+];
+
 export {
     numberaudios,
-    alphabetaudios
+    alphabetaudios,
+    familyaudios
 }

@@ -102,6 +102,7 @@ import en_small_24 from '../image/eng_small_24.png';
 import en_small_25 from '../image/eng_small_25.png';
 import en_small_26 from '../image/eng_small_26.png';
 
+//family
 import grandfather from '../image/family_tree_grandfather.png';
 import grandmother from '../image/family_tree_grandmother.png';
 import father from '../image/family_tree_dad.png';
@@ -113,6 +114,45 @@ import uncle from '../image/family_tree_uncle.png';
 import aunt from '../image/family_tree_aunt.png';
 import cousin_male from '../image/family_tree_cousin_male.png';
 import cousin_female from '../image/family_tree_cousin_famale.png';
+
+//shape
+import shape_1 from '../image/shape_1.png';
+import shape_2 from '../image/shape_2.png';
+import shape_3 from '../image/shape_3.png';
+import shape_4 from '../image/shape_4.png';
+import shape_5 from '../image/shape_5.png';
+import shape_6 from '../image/shape_6.png';
+import shape_7 from '../image/shape_7.png';
+import shape_8 from '../image/shape_8.png';
+import shape_9 from '../image/shape_9.png';
+import shape_10 from '../image/shape_10.png';
+import shape_11 from '../image/shape_11.png';
+import shape_12 from '../image/shape_12.png';
+import shape_13 from '../image/shape_13.png';
+import shape_14 from '../image/shape_14.png';
+import shape_15 from '../image/shape_15.png';
+import shape_16 from '../image/shape_16.png';
+import shape_17 from '../image/shape_17.png';
+
+//shape example
+import shape_1_ex from '../image/shape_1_ex.png';
+import shape_2_ex from '../image/shape_2_ex.png';
+import shape_3_ex from '../image/shape_3_ex.png';
+import shape_4_ex from '../image/shape_4_ex.png';
+import shape_5_ex from '../image/shape_5_ex.png';
+import shape_6_ex from '../image/shape_6_ex.png';
+import shape_7_ex from '../image/shape_7_ex.png';
+import shape_8_ex from '../image/shape_8_ex.png';
+import shape_9_ex from '../image/shape_9_ex.png';
+import shape_10_ex from '../image/shape_10_ex.png';
+import shape_11_ex from '../image/shape_11_ex.png';
+import shape_12_ex from '../image/shape_12_ex.png';
+import shape_13_ex from '../image/shape_13_ex.png';
+import shape_14_ex from '../image/shape_14_ex.png';
+import shape_15_ex from '../image/shape_15_ex.png';
+import shape_16_ex from '../image/shape_16_ex.png';
+import shape_17_ex from '../image/shape_17_ex.png';
+
 
 const numberimages = [
     number_0, number_1, number_2, number_3, number_4,
@@ -151,6 +191,16 @@ const family_images = {
   cousin_female,
 }
 
+const shape_images = [
+  shape_1, shape_2, shape_3, shape_4, shape_5, shape_6, shape_7, shape_8, shape_9, shape_10,
+  shape_11, shape_12, shape_13, shape_14, shape_15, shape_16, shape_17
+]
+
+const shape_example_images = [
+  shape_1_ex, shape_2_ex, shape_3_ex, shape_4_ex, shape_5_ex, shape_6_ex, shape_7_ex, shape_8_ex, shape_9_ex, shape_10_ex,
+  shape_11_ex, shape_12_ex, shape_13_ex, shape_14_ex, shape_15_ex, shape_16_ex, shape_17_ex
+]
+
 export {
     home_abc,
     home_abc_small,
@@ -163,5 +213,7 @@ export {
     en_word_images,
     capital_images,
     small_images,
-    family_images
+    family_images,
+    shape_images,
+    shape_example_images
 }

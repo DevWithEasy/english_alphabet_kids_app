@@ -1,12 +1,15 @@
-import { View, Text, Image, ScrollView } from 'react-native'
+import { View, ImageBackground } from 'react-native'
 import React from 'react'
 import { familyTree } from '../assets/constants/pageui'
 import FamilyMember from '../components/FamilyMember'
+import ImageBlurBackground from '../components/ImageBlurBackground'
 
 export default function Family() {
     return (
-        <ScrollView
-            className='pt-5 bg-white'
+        <ImageBlurBackground
+            source={require('../assets/image/gradient_background.jpg')}
+            blurRadius={10}
+            styles='pt-5'
         >
             <View>
                 {
@@ -23,10 +26,12 @@ export default function Family() {
                                     <FamilyMember
                                         image={family.name.image}
                                         title={family.name.title}
+                                        audio={family.name.audio}
                                     />
                                     <FamilyMember
                                         image={family.spouse.image}
                                         title={family.spouse.title}
+                                        audio={family.spouse.audio}
                                     />
                                 </View>
 
@@ -49,11 +54,13 @@ export default function Family() {
                                                     <FamilyMember
                                                         image={child.name.image}
                                                         title={child.name.title}
+                                                        audio={child.name.audio}
                                                         styles='w-24'
                                                     />
                                                     <FamilyMember
                                                         image={child.spouse.image}
                                                         title={child.spouse.title}
+                                                        audio={child.spouse.audio}
                                                         styles='w-24'
                                                     />
                                                 </View>
@@ -69,6 +76,7 @@ export default function Family() {
                                                             key={i}
                                                             image={children.image}
                                                             title={children.name}
+                                                            audio={children.audio}
                                                             styles={`w-auto bg-green-50 ${child.name.title === 'Uncle' ? 'bg-lime-200' : 'bg-yellow-200'}`}
                                                             textStyle='text-xs'
                                                         />
@@ -84,6 +92,6 @@ export default function Family() {
                     )
                 }
             </View>
-        </ScrollView>
+        </ImageBlurBackground>
     )
 }

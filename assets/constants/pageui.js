@@ -1,6 +1,6 @@
-import { alphabetaudios, numberaudios } from "./audios"
+import { alphabetaudios, familyaudios, numberaudios } from "./audios"
 import { backgroundColor, textColor } from "./colors"
-import { capital_images, en_word_images, family_images, home_abc, home_abc_small, home_family, home_numbers, home_puzzle, home_shapes, home_word, numberimages, small_images } from "./images"
+import { capital_images, en_word_images, family_images, home_abc, home_abc_small, home_family, home_numbers, home_puzzle, home_shapes, home_word, numberimages, shape_example_images, shape_images, small_images } from "./images"
 
 const homedata = [
     {
@@ -130,54 +130,65 @@ const familyTree = [
     {
         name: {
             title: 'Grandfather',
-            image: family_images.grandfather
+            image: family_images.grandfather,
+            audio : familyaudios[0]
         },
         spouse: {
             title: 'Grandmother',
-            image: family_images.grandmother
+            image: family_images.grandmother,
+            audio : familyaudios[1]
         },
         children: [
             {
                 name: {
                     title: 'Father',
-                    image: family_images.father
+                    image: family_images.father,
+                    audio : familyaudios[2]
                 },
                 spouse: {
                     title: 'Mother',
-                    image: family_images.mother
+                    image: family_images.mother,
+                    audio : familyaudios[3]
                 },
                 children: [
                     {
                         name: 'Brother',
-                        image: family_images.brother
+                        image: family_images.brother,
+                        audio : familyaudios[4]
                     },
                     {
                         name: 'Sister',
-                        image: family_images.sister
+                        image: family_images.sister,
+                        audio : familyaudios[5]
                     },
                     {
                         name: 'Me',
-                        image: family_images.me
+                        image: family_images.me,
+                        audio : familyaudios[9]
                     }
                 ]
             },
             {
                 name: {
                     title: 'Uncle',
-                    image: family_images.uncle
+                    image: family_images.uncle,
+                    audio : familyaudios[6]
                 },
                 spouse: {
                     title: 'Aunt',
-                    image: family_images.aunt
+                    image: family_images.aunt,
+                    audio : familyaudios[7]
                 },
                 children: [
                     {
                         name: 'Cousin',
-                        image: family_images.cousin_male
+                        image: family_images.cousin_male,
+                        audio : familyaudios[8]
                     },
                     {
                         name: 'Cousin',
-                        image: family_images.cousin_female
+                        image: family_images.cousin_female,
+                        audio : familyaudios[8]
                     }
                 ]
             }
@@ -223,6 +234,13 @@ const alphabets = [
     textColor : textColor[index]
 }))
 
+const shapes = ['Circle','Oval','Square','Triangle','Rectangle','Heart','Parallelogram','Pentagon','Star','Trapezium','Sphere','Diamond','Pyramid','Pie','Cube','Crescent','Cilinder'].map((item,index)=>({
+    id : index+1,
+    name : item,
+    image : shape_images[index],
+    example : shape_example_images[index]
+}))
+
 
 export {
     homedata,
@@ -230,5 +248,6 @@ export {
     numberdata,
     number_0_to_100,
     familyTree,
-    alphabets
+    alphabets,
+    shapes
 }
