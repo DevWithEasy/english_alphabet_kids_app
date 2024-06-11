@@ -21,7 +21,7 @@ export default function Shapes() {
                   className='w-24 h-24'
                 />
                 <Text
-                  className='p-1 text-center text-lg border border-white rounded-xl'
+                  className='px-2 py-1 text-center text-lg border border-white rounded'
                 >
                   {item.name}
                 </Text>
