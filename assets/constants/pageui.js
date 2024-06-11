@@ -1,6 +1,6 @@
 import { alphabetaudios, familyaudios, numberaudios } from "./audios"
 import { backgroundColor, textColor } from "./colors"
-import { capital_images, en_word_images, family_images, home_abc, home_abc_small, home_family, home_numbers, home_puzzle, home_shapes, home_word, numberimages, shape_example_images, shape_images, small_images } from "./images"
+import { capital_images, en_word_images, family_images, home_abc, home_abc_small, home_family, home_number_0100, home_number_09, home_numbers, home_puzzle, home_shapes, home_word, numberimages, shape_example_images, shape_images, small_images } from "./images"
 
 const homedata = [
     {
@@ -81,7 +81,7 @@ const selection = {
         {
             id: 1,
             title: '(0-9) Learn',
-            image: home_numbers,
+            image: home_number_09,
             backgroundColor: '#dcfce7',
             textColor: '#16a34a',
             path: '/numbers?q=0_9'
@@ -89,7 +89,7 @@ const selection = {
         {
             id: 2,
             title: '(1-100) Learn',
-            image: home_numbers,
+            image: home_number_0100,
             backgroundColor: '#fee2e2',
             textColor: '#dc2626',
             path: '/numbers?q=1_100'

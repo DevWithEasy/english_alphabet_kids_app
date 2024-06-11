@@ -1,6 +1,8 @@
 import home_abc from '../image/abc.png'
 import home_abc_small from '../image/abc_small.png'
 import home_numbers from '../image/numbers.png'
+import home_number_09 from '../image/numbers_09.png'
+import home_number_0100 from '../image/numbers_0100.png'
 import home_shapes from '../image/shapes.png'
 import home_puzzle from '../image/puzzle.png'
 import home_family from '../image/family.png'
@@ -205,6 +207,8 @@ export {
     home_abc,
     home_abc_small,
     home_numbers,
+    home_number_09,
+    home_number_0100,
     home_shapes,
     home_puzzle,
     home_family,
