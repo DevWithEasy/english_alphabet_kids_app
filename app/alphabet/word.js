@@ -1,8 +1,7 @@
-import { View, Text, ScrollView, TouchableOpacity, Image, ImageBackground } from 'react-native'
-import React from 'react'
-import { alphabets } from '../../assets/constants/pageui'
 import { useRouter } from 'expo-router'
-import playSound from '../../utils/playAudio'
+import React from 'react'
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import { alphabets } from '../../assets/constants/pageui'
 import ImageBlurBackground from '../../components/ImageBlurBackground'
 
 export default function Words() {
@@ -20,11 +19,8 @@ export default function Words() {
             alphabets.map(item => (
               <TouchableOpacity
                 key={item.id}
-                onPress={() => {
-                  router.push(`/alphabet/${item.id}`)
-                  playSound(item.audio)
-                }}
-                className='px-5 bg-white/50 rounded-xl'
+                onPress={() => router.push(`/alphabet/${item.id}`)}
+                className='px-5 py-2 bg-white/50 rounded-xl'
               >
                 <View
                   className='flex-row items-center space-x-6'

@@ -64,7 +64,7 @@ export default function AlphabetDetails() {
                         renderItem={({ item }) =>
                             <TouchableOpacity
                                 onPress={() => setCurrentId(item.id)}
-                                className='h-20 w-20 mx-1 px-2 bg-white/50 rounded-xl'
+                                className='h-20 w-20 m-1 bg-white/50 rounded-xl justify-center items-center'
                             >
                                 <Text
                                     className='text-[50px] text-center font-bold'

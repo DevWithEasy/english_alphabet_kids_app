@@ -2,7 +2,7 @@
   "expo": {
     "name": "english_alphabet",
     "slug": "english_alphabet",
-    "scheme": "english_alphabet",
+    "scheme": "english-alphabet",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -33,7 +33,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "d2f64d53-1fc5-429a-b718-e5492bc0761d"
+        "projectId": "203e2cf9-9718-4e43-82a7-e93fa6337c13"
       }
     }
   }
