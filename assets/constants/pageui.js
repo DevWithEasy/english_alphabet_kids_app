@@ -33,7 +33,7 @@ const homedata = [
     {
         id: 4,
         title: 'Family Tree',
-        subTitle: 'Family member introduction',
+        subTitle: 'Family introduction',
         image: home_family,
         backgroundColor: '#ecfccb',
         textColor: '#65a30d',

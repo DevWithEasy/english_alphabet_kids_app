@@ -4,6 +4,7 @@ import { number_0_to_100, numberdata } from '../../assets/constants/pageui'
 import { useGlobalSearchParams } from 'expo-router'
 import playSound from '../../utils/playAudio'
 import hexToRgba from '../../utils/hexToRgba'
+import ImageBlurBackground from '../../components/ImageBlurBackground'
 
 export default function Numbers() {
     const { q } = useGlobalSearchParams()
@@ -16,8 +17,7 @@ export default function Numbers() {
     }, [q])
 
     return (
-        <ImageBackground
-            source={require('../../assets/image/gradient_background.jpg')}
+        <ImageBlurBackground
             blurRadius={10}
         >
             <ScrollView>
@@ -31,7 +31,7 @@ export default function Numbers() {
                                 onPress={() => {
                                     playSound(item.audio)
                                 }}
-                                className='w-4/12 p-2'
+                                className='w-6/12 p-2'
                             >
                                 <View
                                     className='py-5 justify-center items-center space-y-5 bg-white/60 rounded-xl shadow'
@@ -40,7 +40,7 @@ export default function Numbers() {
                                         item.image ?
                                             <Image
                                                 source={item.image}
-                                                className='h-24 w-24'
+                                                className='h-20 w-20'
                                             />
                                             :
                                             <Text
@@ -66,7 +66,7 @@ export default function Numbers() {
                     }
                 </View>
             </ScrollView>
-        </ImageBackground>
+        </ImageBlurBackground>
 
     )
 }

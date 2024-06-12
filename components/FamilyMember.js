@@ -14,11 +14,11 @@ export default function FamilyMember({ image, title, audio, styles, textStyle })
             >
                 <Image
                     source={image}
-                    className='w-12 h-12'
+                    className='w-10 h-10'
                 />
             </View>
             <Text
-                className={cn(textStyle)}
+                className={cn('text-xs',textStyle)}
             >
                 {title}
             </Text>

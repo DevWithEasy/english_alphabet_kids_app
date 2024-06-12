@@ -13,7 +13,9 @@ export default function CategorySelectModal({ data,visible, setVisible }) {
             transparent={true}
             onRequestClose={() => {
                 setVisible(!visible);
-            }}>
+            }}
+            statusBarTranslucent={true}
+            >
             <View
                 className='flex-1 justify-center items-center bg-slate-500/50'
             >
@@ -46,10 +48,10 @@ export default function CategorySelectModal({ data,visible, setVisible }) {
                                     >
                                         <Image
                                             source={item.image}
-                                            className='w-20 h-20'
+                                            className='w-16 h-16'
                                         />
                                         <Text
-                                            className='text-md font-bold'
+                                            className='font-bold'
                                             style={{
                                                 color: item.textColor
                                             }}
@@ -60,11 +62,10 @@ export default function CategorySelectModal({ data,visible, setVisible }) {
                                 </TouchableOpacity>
                             )
                         }
-
                     </View>
                 </View>
                 <View
-                    className='absolute top-0 left-0 w-full p-2 items-end'
+                    className='absolute top-10 right-2 w-full p-2 items-end'
                 >
                     <TouchableOpacity
                         onPress={()=>setVisible(!visible)}

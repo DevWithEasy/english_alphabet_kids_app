@@ -5,104 +5,103 @@ import { homedata, selection } from "../assets/constants/pageui";
 import getGreeting from '../utils/greetings';
 import { useState } from 'react';
 import CategorySelectModal from '../components/CategorySelectModal';
+import ImageBlurBackground from '../components/ImageBlurBackground';
 
 export default function Page() {
-  const [visible,setVisible] = useState(false)
-  const [data,setData] = useState([])
+  const [visible, setVisible] = useState(false)
+  const [data, setData] = useState([])
   const router = useRouter()
-  const handleRoute=(item)=>{
-    if (item.path === '/shapes' || item.path === '/games' || item.path === '/family'){
+  const handleRoute = (item) => {
+    if (item.path === '/shapes' || item.path === '/games' || item.path === '/family') {
       router.push(item.path)
-    }else{
+    } else {
       setVisible(!visible)
       setData(selection[item.title])
     }
   }
   return (
-    <ScrollView
-      className='bg-white'
-      style={{
-        paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
-      }}
+    <ImageBlurBackground
+      header={false}
     >
-      <View
-        className='w-32 h-32 mx-auto justify-center items-center rounded-full'
-        style={{
-          backgroundColor: '#fee2e2'
-        }}
-      >
-        <Image
-          source={require('../assets/image/female_baby.png')}
-          className='w-24 h-24'
-        />
-      </View>
-      <View
-        className='py-5 flex-col items-center justify-center'
-      >
-        <Text
-          className='text-xl text-gray-600'
+      <ScrollView>
+        <View
+          className='w-32 h-32 mx-auto mt-5 justify-center items-center rounded-full'
+          style={{
+            backgroundColor: '#fee2e2'
+          }}
         >
-          {getGreeting()}
-        </Text>
-        <Text
-          className='text-amber-700 text-2xl italic font-extrabold'
+          <Image
+            source={require('../assets/image/female_baby.png')}
+            className='w-24 h-24'
+          />
+        </View>
+        <View
+          className='py-5 flex-col items-center justify-center'
         >
-          Siku !
-        </Text>
-      </View>
-      <View
-        className='flex-row flex-wrap pb-8'
-      >
-        {
-          homedata.map((item, index) => {
-            return (
-              <TouchableOpacity
-                key={index}
-                onPress={()=>handleRoute(item)}
-                className='w-1/2 p-2'
-              >
-                <View
-                  className={`justify-center items-center space-y-4 py-7 rounded-xl`}
-                  style={{
-                    backgroundColor: item.backgroundColor
-                  }}
+          <Text
+            className='text-xl text-gray-600'
+          >
+            {getGreeting()}
+          </Text>
+          <Text
+            className='text-amber-700 text-2xl italic font-extrabold'
+          >
+            Siku !
+          </Text>
+        </View>
+        <View
+          className='flex-row flex-wrap pb-10'
+        >
+          {
+            homedata.map((item, index) => {
+              return (
+                <TouchableOpacity
+                  key={index}
+                  onPress={() => handleRoute(item)}
+                  className='w-1/2 h-52 p-2'
                 >
-                  <Image
-                    source={item.image}
-                    className='w-20 h-20'
-                  />
                   <View
-                    className='items-center'
+                    className={`justify-center items-center space-y-4 py-7 rounded-xl`}
+                    style={{
+                      backgroundColor: item.backgroundColor
+                    }}
                   >
-                    <Text
-                      className={`text-lg font-bold`}
-                      style={{
-                        color: item.textColor
-                      }}
+                    <Image
+                      source={item.image}
+                      className='w-20 h-20'
+                    />
+                    <View
+                      className='items-center'
                     >
-                      {item.title}
-                    </Text>
-                    <Text
-                      className='text-gray-500 text-xs'
-                    >
-                      ({item.subTitle})
-                    </Text>
+                      <Text
+                        className={`text-lg font-bold`}
+                        style={{
+                          color: item.textColor
+                        }}
+                      >
+                        {item.title}
+                      </Text>
+                      <Text
+                        className='text-gray-500 text-xs'
+                      >
+                        ({item.subTitle})
+                      </Text>
+                    </View>
+
                   </View>
-
-                </View>
-              </TouchableOpacity>
-            )
-          })
+                </TouchableOpacity>
+              )
+            })
+          }
+        </View>
+        {
+          visible && <CategorySelectModal
+            visible={visible}
+            setVisible={setVisible}
+            data={data}
+          />
         }
-      </View>
-      {
-        visible && <CategorySelectModal
-          visible={visible}
-          setVisible={setVisible}
-          data={data}
-        />
-      }
-    </ScrollView>
-
+      </ScrollView>
+    </ImageBlurBackground>
   );
 }

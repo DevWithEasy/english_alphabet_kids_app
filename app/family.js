@@ -55,13 +55,13 @@ export default function Family() {
                                                         image={child.name.image}
                                                         title={child.name.title}
                                                         audio={child.name.audio}
-                                                        styles='w-24'
+                                                        styles='w-20'
                                                     />
                                                     <FamilyMember
                                                         image={child.spouse.image}
                                                         title={child.spouse.title}
                                                         audio={child.spouse.audio}
-                                                        styles='w-24'
+                                                        styles='w-20'
                                                     />
                                                 </View>
 
@@ -78,7 +78,6 @@ export default function Family() {
                                                             title={children.name}
                                                             audio={children.audio}
                                                             styles={`w-auto bg-green-50 ${child.name.title === 'Uncle' ? 'bg-lime-200' : 'bg-yellow-200'}`}
-                                                            textStyle='text-xs'
                                                         />
                                                     )
                                                 }

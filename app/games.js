@@ -7,6 +7,7 @@ export default function Games() {
   return (
     <ImageBlurBackground
       image={bgImage}
+      blurRadius={5}
     >
           <View>
       <Text>Games</Text>

@@ -18,16 +18,16 @@ export default function Shapes() {
               >
                 <Image
                   source={item.image}
-                  className='w-24 h-24'
+                  className='w-20 h-20'
                 />
                 <Text
-                  className='px-2 py-1 text-center text-lg border border-white rounded'
+                  className='px-2 py-1 text-center font-bold border border-white rounded'
                 >
                   {item.name}
                 </Text>
                 <Image
                   source={item.example}
-                  className='w-24 h-24'
+                  className='w-20 h-20'
                 />
               </TouchableOpacity>
             )
