@@ -1,86 +1,85 @@
-import React, { useEffect, useState } from 'react'
-import { FlatList, Image, ImageBackground, Platform, Text, TouchableOpacity, View } from 'react-native'
-import Constants from 'expo-constants';
 import { useGlobalSearchParams, useRouter } from 'expo-router';
+import React, { useEffect, useState } from 'react';
+import { FlatList, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { alphabets } from '../../assets/constants/pageui';
-import { AntDesign } from '@expo/vector-icons';
-import playSound from '../../utils/playAudio';
-import { Ionicons } from '@expo/vector-icons';
 import ImageBlurBackground from '../../components/ImageBlurBackground';
+import playSound from '../../utils/playAudio';
 
 export default function AlphabetDetails() {
-    const router = useRouter()
     const { id } = useGlobalSearchParams()
-    const [currentId,setCurrentId] = useState(id)
+    const [currentId, setCurrentId] = useState(id)
     const [alphabet, setAlphabet] = useState({})
-    useEffect(() => {
-        setAlphabet(alphabets.find(a => a.id == id))
-    }, [id])
 
+    useEffect(() => {
+        const findAlphabet = alphabets.find(a => a.id == currentId)
+        setAlphabet(findAlphabet)
+        playSound(findAlphabet.audio)
+    }, [currentId])
+    
     return (
         <ImageBlurBackground
+            title={`${alphabet.capital} for ${alphabet.word}`}
         >
-            <View
-                className='h-[300px] flex-row items-center pt-20'
+            <ScrollView
+                className='flex-1'
             >
                 <View
-                    className='px-2 space-y-2'
+                    className='flex-row items-center'
                 >
-                    <Text
-                        className='w-20 bg-white/40 text-center border border-red-500 text-[60px] text-red-500 font-bold rounded-xl'
-                    >
-                        {alphabet.capital}
-                    </Text>
-                    <Text
-                        className='w-20 bg-white/40 text-center border border-blue-500 text-[60px] text-blue-500 font-bold rounded-xl'
-                    >
-                        {alphabet.small}
-                    </Text>
-                </View>
-                <Image
-                    source={alphabet.word_image}
-                    className='w-[200px] h-[200px] mx-auto'
-                />
-            </View>
-            <View
-                className='mt-10 flex-row justify-center'
-            >
-                <Text
-                    className='px-6 text-[60px] bg-sky-300/40 text-white font-bold text-center border border-sky-500 rounded-xl'
-                >
-                    {alphabet.word}
-                </Text>
-            </View>
-            <View
-                className='mt-20'
-            >
-                <FlatList
-                data={alphabets}
-                keyExtractor={(item=>item.id)}
-                horizontal={true}
-                renderItem={({item})=>
-                    <TouchableOpacity
-                        onPress={()=>router.replace(`/alphabet/${item.id}`)}
-                        className='h-24 w-24 mx-1 px-2 bg-white/50 rounded-xl'
+                    <View
+                        className='px-2 space-y-2'
                     >
                         <Text
-                            className='text-[70px] text-center font-bold'
-                            style={{
-                                color : item.textColor? item.textColor : '#ffffff'
-                            }}
+                            className='w-20 bg-white/40 text-center border border-red-500 text-[50px] text-red-500 font-bold rounded-xl'
                         >
-                            {item.capital}
-                            </Text>
-                    </TouchableOpacity>
-                }
-            />
-            </View>
-            <TouchableOpacity
-                onPress={() => playSound(alphabet.audio)}
-                className='w-full p-2 absolute bottom-0 items-center'
-            >
-                <AntDesign name="playcircleo" size={60} color="#ef4444" />
-            </TouchableOpacity>
+                            {alphabet.capital}
+                        </Text>
+                        <Text
+                            className='w-20 bg-white/40 text-center border border-blue-500 text-[50px] text-blue-500 font-bold rounded-xl'
+                        >
+                            {alphabet.small}
+                        </Text>
+                    </View>
+                    <Image
+                        source={alphabet.word_image}
+                        className='w-[200px] h-[200px] mx-auto'
+                    />
+                </View>
+                <View
+                    className='mt-10 flex-row justify-center'
+                >
+                    <Text
+                        className='px-6 text-[60px] bg-sky-300/40 text-white font-bold text-center border border-sky-500 rounded-xl'
+                    >
+                        {alphabet.word}
+                    </Text>
+                </View>
+                <View
+                    className='mt-20'
+                >
+                    <FlatList
+                        data={alphabets}
+                        keyExtractor={(item => item.id)}
+                        horizontal={true}
+                        renderItem={({ item }) =>
+                            <TouchableOpacity
+                                onPress={() => setCurrentId(item.id)}
+                                className='h-20 w-20 mx-1 px-2 bg-white/50 rounded-xl'
+                            >
+                                <Text
+                                    className='text-[50px] text-center font-bold'
+                                    style={{
+                                        color: item.textColor ? item.textColor : '#ffffff'
+                                    }}
+                                >
+                                    {item.capital}
+                                </Text>
+                            </TouchableOpacity>
+                        }
+                    />
+                </View>
+            </ScrollView>
+
         </ImageBlurBackground>
     )
 }

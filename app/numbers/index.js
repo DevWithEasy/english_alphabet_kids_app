@@ -19,6 +19,7 @@ export default function Numbers() {
     return (
         <ImageBlurBackground
             blurRadius={10}
+            title={q === '0_9' ? 'Number Introduce' : 'Number 1-100'}
         >
             <ScrollView>
                 <View

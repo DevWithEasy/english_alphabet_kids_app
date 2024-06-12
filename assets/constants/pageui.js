@@ -1,6 +1,6 @@
-import { alphabetaudios, familyaudios, numberaudios } from "./audios"
+import { alphabetaudios, familyaudios, numberaudios, shapeaudios } from "./audios"
 import { backgroundColor, textColor } from "./colors"
-import { capital_images, en_word_images, family_images, home_abc, home_abc_small, home_family, home_number_0100, home_number_09, home_numbers, home_puzzle, home_shapes, home_word, numberimages, shape_example_images, shape_images, small_images } from "./images"
+import { capital_images, en_word_images, family_images, games_images, home_abc, home_abc_small, home_family, home_number_0100, home_number_09, home_numbers, home_puzzle, home_shapes, home_word, numberimages, shape_example_images, shape_images, small_images } from "./images"
 
 const homedata = [
     {
@@ -238,7 +238,16 @@ const shapes = ['Circle','Oval','Square','Triangle','Rectangle','Heart','Paralle
     id : index+1,
     name : item,
     image : shape_images[index],
-    example : shape_example_images[index]
+    example : shape_example_images[index],
+    audio : shapeaudios[index]
+}))
+
+const games =['Arrange Letter','Word Match','Find Letter','Arrange Number','Adding Number','Find Shape'].map((item,index) =>({
+    id : index+1,
+    name : item,
+    image : games_images[index],
+    backgroundColor : backgroundColor[index],
+    textColor : textColor[index]
 }))
 
 
@@ -249,5 +258,6 @@ export {
     number_0_to_100,
     familyTree,
     alphabets,
-    shapes
+    shapes,
+    games
 }

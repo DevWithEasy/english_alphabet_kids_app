@@ -9,6 +9,7 @@ export default function Family() {
         <ImageBlurBackground
             source={require('../assets/image/gradient_background.jpg')}
             blurRadius={10}
+            title='Family Member Introduce'
             styles='pt-5'
         >
             <View>

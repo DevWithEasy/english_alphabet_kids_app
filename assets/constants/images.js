@@ -155,6 +155,16 @@ import shape_15_ex from '../image/shape_15_ex.png';
 import shape_16_ex from '../image/shape_16_ex.png';
 import shape_17_ex from '../image/shape_17_ex.png';
 
+//game
+import game_1 from '../image/game_1.png';
+import game_2 from '../image/game_2.png';
+import game_3 from '../image/game_3.png';
+import game_4 from '../image/game_4.png';
+import game_5 from '../image/game_5.png';
+import game_6 from '../image/game_6.png';
+
+const games_images=[game_1,game_2,game_3,game_4,game_5,game_6]
+
 
 const numberimages = [
     number_0, number_1, number_2, number_3, number_4,
@@ -219,5 +229,6 @@ export {
     small_images,
     family_images,
     shape_images,
-    shape_example_images
+    shape_example_images,
+    games_images
 }

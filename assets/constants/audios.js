@@ -140,6 +140,30 @@ import family_8 from '../audio/family_8.mp3';
 import family_9 from '../audio/family_9.mp3';
 import family_10 from '../audio/family_10.mp3';
 
+//shape
+import shape_1 from '../audio/shape_1.mp3';
+import shape_2 from '../audio/shape_2.mp3';
+import shape_3 from '../audio/shape_3.mp3';
+import shape_4 from '../audio/shape_4.mp3';
+import shape_5 from '../audio/shape_5.mp3';
+import shape_6 from '../audio/shape_6.mp3';
+import shape_7 from '../audio/shape_7.mp3';
+import shape_8 from '../audio/shape_8.mp3';
+import shape_9 from '../audio/shape_9.mp3';
+import shape_10 from '../audio/shape_10.mp3';
+import shape_11 from '../audio/shape_11.mp3';
+import shape_12 from '../audio/shape_12.mp3';
+import shape_13 from '../audio/shape_13.mp3';
+import shape_14 from '../audio/shape_14.mp3';
+import shape_15 from '../audio/shape_15.mp3';
+import shape_16 from '../audio/shape_16.mp3';
+import shape_17 from '../audio/shape_17.mp3';
+
+const shapeaudios = [
+    shape_1, shape_2, shape_3, shape_4, shape_5, shape_6, shape_7, shape_8, shape_9, shape_10,
+    shape_11, shape_12, shape_13, shape_14, shape_15, shape_16, shape_17
+]
+
 const alphabetaudios = [
   alphabet_1, alphabet_2, alphabet_3, alphabet_4, alphabet_5, alphabet_6, alphabet_7, alphabet_8, alphabet_9, alphabet_10,
   alphabet_11, alphabet_12, alphabet_13, alphabet_14, alphabet_15, alphabet_16, alphabet_17, alphabet_18, alphabet_19, alphabet_20,
@@ -173,5 +197,6 @@ const familyaudios = [
 export {
     numberaudios,
     alphabetaudios,
-    familyaudios
+    familyaudios,
+    shapeaudios
 }

@@ -10,6 +10,7 @@ export default function Words() {
   return (
     <ImageBlurBackground
       blurRadius={20}
+      title='Alphabet Word'
     >
       <ScrollView>
         <View
@@ -23,7 +24,7 @@ export default function Words() {
                   router.push(`/alphabet/${item.id}`)
                   playSound(item.audio)
                 }}
-                className='p-2 bg-white/50 rounded-xl'
+                className='px-5 bg-white/50 rounded-xl'
               >
                 <View
                   className='flex-row items-center space-x-6'
