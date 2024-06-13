@@ -1,4 +1,4 @@
-import { ImageBackground, Platform, Text, TouchableOpacity, View } from 'react-native'
+import { ImageBackground, Platform, Text, TouchableOpacity, View, SafeAreaView } from 'react-native'
 import React from 'react'
 import bgImage from '../assets/image/gradient_background.jpg'
 import cn from '../utils/cn'
@@ -10,30 +10,30 @@ export default function ImageBlurBackground({ header = true, title, image, style
     const router = useRouter()
     return (
         <ImageBackground
-            source={image ? image : bgImage}
-            blurRadius={blurRadius ? blurRadius : 8}
-            className={cn('flex-1', styles)}
-            style={{
-                paddingTop: Platform.OS === 'ios' ? 0 : Constant.statusBarHeight
-            }}
-        >
-            {header &&
-                <View
-                    className='p-2 flex-row items-center space-x-2 rounded-xl'
-                >
-                    <TouchableOpacity
-                        onPress={()=>router.back()}
+                source={image ? image : bgImage}
+                blurRadius={blurRadius ? blurRadius : 8}
+                className={cn('flex-1', styles)}
+                style={{
+                    paddingTop: Platform.OS === 'ios' ? 0 : Constant.statusBarHeight
+                }}
+            >
+                {header &&
+                    <View
+                        className='mx-2 mb-1 p-2 flex-row items-center space-x-2 bg-white/50 rounded-xl'
                     >
-                        <Ionicons name="arrow-back-outline" size={24} color="black" />
-                    </TouchableOpacity>
-                    <Text
-                        className='text-xl'
-                    >
-                        {title}
+                        <TouchableOpacity
+                            onPress={() => router.back()}
+                        >
+                            <Ionicons name="arrow-back-outline" size={20} color="black" />
+                        </TouchableOpacity>
+                        <Text
+                            className='text-lg'
+                        >
+                            {title}
                         </Text>
-                </View>
-            }
-            {children}
-        </ImageBackground>
+                    </View>
+                }
+                {children}
+            </ImageBackground>
     )
 }
